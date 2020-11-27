@@ -14,7 +14,7 @@ install_load_package('RColorBrewer')
 install_load_package('lubridate')
 install_load_package('cowplot')
 
-df <- read_csv('/Users/etiennelapuente/Documents/Data/Code/Democratic debate/debate_transcripts_v3_2020-02-26.csv')
+df <- read_csv('debate_transcripts_v3_2020-02-26.csv')
 
 df$debate_name <- as.factor(df$debate_name)
 df$date <- as.Date(df$date,tryFormats = c("%m-%d-%Y"))
