@@ -1,0 +1,48 @@
+---
+title: "Wordclouds"
+author: "Etienne Lapuente"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+source('data_loading.R')
+```
+Hereafter I will show the wordclouds for each candidate. I will consider only the situations where the speaker speaks at least 10 seconds.
+The function that generates it is available in the file `data_loading.R`
+
+&nbsp;
+
+# Joe Biden
+```{r JB, include=T, echo=F}
+make_wordcloud(tokenize(filter(df,speaker=='Joe Biden' & speaking_time_seconds>10)$speech),15)
+```
+
+&nbsp;
+
+# Bernie Sanders
+```{r BS, include=T, echo=F, warning=F}
+make_wordcloud(tokenize(filter(df,speaker=='Bernie Sanders' & speaking_time_seconds>10)$speech),15)
+```
+
+&nbsp;
+
+# Elizabeth Warren
+```{r EW, include=T, echo=F, warning=F}
+make_wordcloud(tokenize(filter(df,speaker=='Elizabeth Warren' & speaking_time_seconds>10)$speech),15)
+```
+
+&nbsp;
+
+# Pete Buttigieg
+```{r PB, include=T, echo=F, warning=F}
+make_wordcloud(tokenize(filter(df,speaker=='Pete Buttigieg' & speaking_time_seconds>10)$speech),15)
+```
+
+&nbsp;
+
+# Amy Klobuchar
+```{r AK, include=T, echo=F, warning=F}
+make_wordcloud(tokenize(filter(df,speaker=='Amy Klobuchar' & speaking_time_seconds>10)$speech),15)
+```
+
